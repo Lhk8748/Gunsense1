@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Gunsense</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/gun_logo.png')}}" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{ url_for('static', filename='css/styles.css')}}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-light bg-gunsenseback static-top">
+            <div class="container">
+              
+                <a href="#"><img src = "{{ url_for('static', filename='assets/img/gunsense_logo_cropped.png')}}" alt="GUNSENSE" style="width:100px;height:50px;"></a>
+                <a class="text-right text-black" href="#packages">Technologies</a>
+                <a href="#aboutproj" class = "text-right text-black">About the project</a>
+                <a href = "#meetgreet" class = "text-right text-black">Meet the team</a>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <div class="text-center text-white">
+                            <!-- Page heading-->
+                            <h1 class="mb-5">GUNSENSE
+                    </h1><p>
+                          Upload an image to detect the weapon!
+                          </p><br>
+                        
+                             <a class="mb-0" id='seefood_button'>
+                                <form id='seefood_form' method=post enctype=multipart/form-data>
+                                    <input id="seefood_input_field" name="file" type="file" onchange="this.form.submit();" hidden/>
+                                </form>
+                                <button href="#" target="_blank" class="btn btn-primary btn-lg btn-text">
+                                    <i class="fas fa-camera pr-2 left " aria-hidden="true"></i> Classify the weapon
+                                </button>
+                            </a>
+                              <!--<div class="col-auto"><button type="file" id="myFile" name="filename" class="btn btn-primary btn-lg" id="submitButton" type="submit">Test the model</button></div>-->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Icons Grid-->
+        <section id = "packages" class="features-icons bg-light text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-camera m-auto text-primary"></i></div>
+                            <h3>YOLOv5</h3>
+                            <p class="lead mb-0">A breaking edge computer vision technology. A highly reliable way to train AI. YOLOv5 is a fast and efficient convolutional neural network (CNN) to tackle computer vision-related problems.
+                          </p>YOLO stands for You Only Look Once
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary"></i></div>
+                            <h3>TensorFlow</h3>
+                            <p class="lead mb-0">An open source platform used for anything machine learning. A state-of-the-art and very useful tool. It can be especially useful for training deep neural networks.</p>
+                        </div>
+                    </div>
+                  <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary"></i></div>
+                            <h3>RoboFlow</h3>
+                            <p class="lead mb-0">An annotation tool for training data. RoboFlow also allowed us to augment our data using methods such as rotating, shearing, and blurring each image to make sure our model extracts more information for every image.</p>
+                        </div>
+                    </div>
+                  <center>
+                    <div class="col-lg-4">
+                        <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                            <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary"></i></div>
+                            <h3>Serp API</h3>
+                            <p class="lead mb-0">A web scraping tool used for collecting images for use in data sets.  </p>Web scraping: scouring the internet for images, ex. Google Images
+                        </div>
+                    </div>
+                    </center>
+                </div>
+            </div>
+        </section>
+        <!-- Image Showcases-->
+        <section id = "aboutproj" class="showcase">
+            <div class="container-fluid p-0">
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({{ url_for('static', filename='assets/img/polis2.jpg') }});"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Motivation</h2>
+                        <p class="lead mb-0">We wanted to create this AI to help law enforcement be informed about potential problems so they can accurately respond way before someone calls 911. This model will help provide a proactive method for weapon detection that could be integrated with security cameras. Using this AI will help reduce response times to deadly events, and provide information to law enforcement to keep more people safe. Thousands of people die every year due to weapons and we want to reduce that number to help save lives. This can be implemented in schools, public places (malls, parks, concerts etc.), and in large crowds to help detect potential problems before they can cause harm.</p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url({{ url_for('static', filename='assets/img/knife.jpeg') }});"></div>
+                    <div class="col-lg-6 my-auto showcase-text">
+                        <h2>Model and Dataset</h2>
+                        <p class="lead mb-0"> We compiled over 800 images into a dataset to train our current model. We have used Roboflow to carefully annotate every image. From there our model was trained using YOLOv5 creating a accurate and reliable model. </p>
+                    </div>
+                </div>
+                <div class="row g-0">
+                    <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url({{ url_for('static', filename='assets/img/sniper.jpeg') }});"></div>
+                    <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                        <h2>Future Scope</h2>
+                        <p class="lead mb-0">In the future we hope to collect more data and train our model to become even more accurate. We also want to experiment with different versions of YOLOv5 such as YOLOv5M or YOLOv5L once we gather a larger data set to train with more images. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Testimonials-->
+        <section id = "meetgreet" class="testimonials text-center bg-light">
+            <div class="container">
+                <h2 class="mb-5">Meet The team</h2>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" src="{{ url_for('static', filename='assets/img/Vikky.JPG')}}" alt="Vicky's Photo" />
+                            <h5>Vicky Zhou</h5>
+                            <p class="font-weight-light mb-0">Vicky is a junior at Episcopal High School. He likes to laugh with his friends. They do a lot of handicraft and ceramics. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" alt= "" src="https://i.imgur.com/VH5jU5z.jpg" title="source: imgur.com" />
+                            <h5>Kushal Durga</h5>
+                            <p class="font-weight-light mb-0">Kushal is a freshmen at Northville high school. He enjoys playing soccer and painting models in his free time. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" src="{{ url_for('static', filename='assets/img/john.jpg')}}" rel="stylesheet" alt="John's photo" />
+                            <h5>John Joseph</h5>
+                            <p class="font-weight-light mb-0">John is a sophomore at Montgomery Blair high school. He likes to go biking on the C&O canal in his free time.</p>
+                        </div>
+                    </div>
+              <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" src="{{ url_for('static', filename='assets/img/Nishit.png')}}" rel="stylesheet" alt="Nishit's Photo" />
+                            <h5>Nishit Sharma</h5>
+                            <p class="font-weight-light mb-0">Nishit is a rising sophomore at Morris County Vocational School of Technology. He likes playing video games and talking to his friends.</p>
+                        </div>
+                    </div>
+                  <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" src="{{ url_for('static', filename='assets/img/drake.JPG')}}" alt="..." />
+                            <h5>Drake Wu</h5>
+                            <p class="font-weight-light mb-0">Drake is a sophomore at Masterman. He enjoys running and playing team games and team sports like Volleyball.</p>
+                        </div>
+                    </div>
+                  <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-square mb-3" src="{{ url_for('static', filename='assets/img/lucas.jpeg')}}" alt="..." />
+                            <h5>Lucas Koo</h5>
+                            <p class="font-weight-light mb-0">Lucas attends Julia R Masterman and enjoys playing valorant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action-->
+        <section class="call-to-action text-white text-center" id="signup">
+            <div class="container position-relative">
+                <div class="row justify-content-center">
+                    <div class="col-xl-6">
+                        <h2 class="mb-4">Give your Feedback here</h2>
+                        <!-- Signup form-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
+                            <!-- Email address input-->
+                            <div class="row">
+                                <div class="col">
+                                    <input class="form-control form-control-lg" id="emailAddressBelow" type="text" placeholder="Tell us how you feel!" data-sb-validations="required,text" />
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">We'd really appreciate it.</div>
+                                    <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Doesn't seem like feedback to us.</div>
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                            <!-- Submit success message-->
+                            <!---->
+                            <!-- This is what your users will see when the form-->
+                            <!-- has successfully submitted-->
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">Thank you!</div>
+                                   
+                                </div>
+                            </div>
+                            <!-- Submit error message-->
+                            <!---->
+                            <!-- This is what your users will see when there is-->
+                            <!-- an error submitting the form-->
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">An unknown problem popped up. We'll be right back with yous.</div></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
+                        <ul class="list-inline mb-2">
+                            <li class="list-inline-item"><a href="https://www.ai-camp.org">AI Camp</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="mailto:hello@ai-camp.org">Contact</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="https://github.com/Nishit-Sharma">Github</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                        </ul>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; AI Camp 2022. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item me-4">
+                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{ url_for('static', filename='plugins/jquery/jquery.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+      <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <script>
+        // added to get upload with a button working
+        document.getElementById('seefood_button').addEventListener('click', openDialog);
+
+        function openDialog() {
+            document.getElementById('seefood_input_field').click();
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ajaxSend(function() {
+    $("#spinner").show();
+}).ajaxStop(function() {
+    $("#spinner").hide();
+}).ajaxError(function() {
+    $("#spinner").hide();
+});
+    </script>
+    </body>
+</html>
